@@ -1,3 +1,9 @@
+# 初めて来た人へ
+
+とりあえずwikiを見て下さい
+
+
+
 # Hubot
 
 This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
