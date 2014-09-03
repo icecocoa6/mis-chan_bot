@@ -38,5 +38,5 @@ module.exports = (robot) ->
 
   robot.hear /^joined \#/, (msg) ->
     user_name = msg.message.user.name
-    msg.send "@" + user_name + ": Yo."
+    msg.send "@#{user_name}: Yo."
 
