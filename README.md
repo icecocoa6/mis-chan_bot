@@ -35,6 +35,8 @@ Slack内で特定の文字列を打ち込む、もしくは特定の動作をす
 
 ### 開発用チャンネル
 
+misw-info.slack.com
+
 ・bot開発用チャンネル #op_mis-chan_bot
 
 ・botテスト用チャンネル　#op_mis-chan_bot_test
