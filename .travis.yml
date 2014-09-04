@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- '0.10'
+deploy:
+  provider: heroku
+  api_key:
+    secure: IUZKtSjms7M6Dd7d9NMFWFHvNu1u/mTHisRdPbMd7n40XS7Jhk5cGkddJY4xNE2jE7eIg9d3w+Atf4/cvnvwtyXaWKOWRDcTIbU5efhXI4jeqfExYhO9Jz7Pv77ZNr+JB5LTGliA900htiuypm9UwCqS4CMsOaF/RaFxuFdfHNc=
+  app: rocky-ocean-7630
+  on:
+    repo: MISW/mis-chan_bot

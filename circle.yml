@@ -1,9 +1,0 @@
-general:
-  build_dir: api
-
-deployment:
-  production:
-    branch: master
-    heroku:
-      heroku:
-        appname: rocky-ocean-7630
