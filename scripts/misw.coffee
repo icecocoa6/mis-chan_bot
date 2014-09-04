@@ -15,7 +15,7 @@ module.exports = (robot) ->
  （＿フ彡            / ←  #{user_name}
 """
 
-  robot.hear /^joined \#/, (msg) ->
+  robot.hear /^joined \#/i, (msg) ->
     user_name = msg.message.user.name
     msg.send "@#{user_name}: Yo."
 
