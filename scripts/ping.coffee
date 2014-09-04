@@ -23,16 +23,3 @@ module.exports = (robot) ->
   robot.respond /DIE$/i, (msg) ->
     msg.send "Goodbye, cruel world."
     process.exit 0
-
-  robot.hear /ぬるぽ/, (msg) ->
-    msg.send '''
- 
-   Λ＿Λ    ＼＼
-  （ ・∀・）   | | ｶﾞｯ
- と       ）   | |
-   Ｙ /ノ     人
-    / ）     <  >  _Λ∩
- ＿/し' ／／  Ｖ｀Д´）/
- （＿フ彡            / ←>>1
-'''
-

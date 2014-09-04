@@ -1,157 +1,89 @@
-# Hubot
+# みすちゃんbot
 
-This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
+MIS.W内で利用しているチャットシステムSlack内で稼働しているbotのソースコードです。
+どなたでもお気軽に開発にご参加ください。
 
-This version is designed to be deployed on [Heroku][heroku]. This README was generated for you by hubot to help get you started. Definitely update and improve to talk about your own instance, how to use and deploy, what functionality he has, etc!
+MIS.Wのマスコット"みすちゃん"のなりきりbotとして、
+サークル員に向けての情報などを話す予定です。
 
-[heroku]: http://www.heroku.com
-
-### Testing Hubot Locally
-
-You can test your hubot by running the following.
-
-    % bin/hubot
-
-You'll see some start up output about where your scripts come from and a
-prompt.
-
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading adapter shell
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading scripts from /home/tomb/Development/hubot/scripts
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading scripts from /home/tomb/Development/hubot/src/scripts
-    Hubot>
-
-Then you can interact with hubot by typing `hubot help`.
-
-    Hubot> hubot help
-
-    Hubot> animate me <query> - The same thing as `image me`, except adds a few
-    convert me <expression> to <units> - Convert expression to given units.
-    help - Displays all of the help commands that Hubot knows about.
-    ...
+Hubotを利用しているため、将来的に他サービスの連携も考えています。
 
 
-### Scripting
 
-Take a look at the scripts in the `./scripts` folder for examples.
-Delete any scripts you think are useless or boring.  Add whatever functionality you
-want hubot to have. Read up on what you can do with hubot in the [Scripting Guide](https://github.com/github/hubot/blob/master/docs/scripting.md).
+## みすちゃんって？
 
-### Redis Persistence
+![MIS-Chan_Origin](https://pbs.twimg.com/media/Ao65-NSCIAARgGY.png:large "みすちゃんオリジナル版")
 
-If you are going to use the `redis-brain.coffee` script from `hubot-scripts`
-(strongly suggested), you will need to add the Redis to Go addon on Heroku which requires a verified
-account or you can create an account at [Redis to Go][redistogo] and manually
-set the `REDISTOGO_URL` variable.
+PC創作系サークルMIS.Wのマスコットキャラクターです。
+MIS.Wとして発表する作品の表紙やチラシ、HPなど様々な場所で見ることができます。
 
-    % heroku config:set REDISTOGO_URL="..."
+まだ細かい設定などは決まってませんので、見た目や口調など各々が割と自由にアレンジしています。
 
-If you don't require any persistence feel free to remove the
-`redis-brain.coffee` from `hubot-scripts.json` and you don't need to worry
-about redis at all.
 
-[redistogo]: https://redistogo.com/
 
-## Adapters
+## 使い方
 
-Adapters are the interface to the service you want your hubot to run on. This
-can be something like Campfire or IRC. There are a number of third party
-adapters that the community have contributed. Check
-[Hubot Adapters][hubot-adapters] for the available ones.
+Slack内で特定の文字列を打ち込む、もしくは特定の動作をすることで反応します。
 
-If you would like to run a non-Campfire or shell adapter you will need to add
-the adapter package as a dependency to the `package.json` file in the
-`dependencies` section.
+コマンド一覧を知るためには「みすちゃんbot help」と発言してみて下さい。
 
-Once you've added the dependency and run `npm install` to install it you can
-then run hubot with the adapter.
 
-    % bin/hubot -a <adapter>
 
-Where `<adapter>` is the name of your adapter without the `hubot-` prefix.
 
-[hubot-adapters]: https://github.com/github/hubot/blob/master/docs/adapters.md
+## 開発に興味のある方へ
 
-## hubot-scripts
 
-There will inevitably be functionality that everyone will want. Instead
-of adding it to hubot itself, you can submit pull requests to
-[hubot-scripts][hubot-scripts].
+### 開発用チャンネル
 
-To enable scripts from the hubot-scripts package, add the script name with
-extension as a double quoted string to the `hubot-scripts.json` file in this
-repo.
+・bot開発用チャンネル #op_mis-chan_bot
 
-[hubot-scripts]: https://github.com/github/hubot-scripts
+・botテスト用チャンネル　#op_mis-chan_bot_test
 
-## external-scripts
+どなたでもお気軽にどうぞ。
 
-Tired of waiting for your script to be merged into `hubot-scripts`? Want to
-maintain the repository and package yourself? Then this added functionality
-maybe for you!
 
-Hubot is now able to load scripts from third-party `npm` packages! To enable
-this functionality you can follow the following steps.
+### 新機能の要望がある方、バグなどを見つけた方
 
-1. Add the packages as dependencies into your `package.json`
-2. `npm install` to make sure those packages are installed
+GitHubのIssue機能を利用して、バグや追加機能要望などの投稿をお願いします。開発者が確認して修正または実装します。
 
-To enable third-party scripts that you've added you will need to add the package
-name as a double quoted string to the `external-scripts.json` file in this repo.
 
-## Deployment
+### プログラマの方
 
-    % heroku create --stack cedar
-    % git push heroku master
-    % heroku ps:scale app=1
+実稼働用のブランチは「master」になります。
+Issueなどを解決したコードをコミットする際は、こちらにPull Requestを送って下さい。
+どなたでもお気軽にコミットして下さい。
 
-If your Heroku account has been verified you can run the following to enable
-and add the Redis to Go addon to your app.
 
-    % heroku addons:add redistogo:nano
+### セリフを考えたい方
 
-If you run into any problems, checkout Heroku's [docs][heroku-node-docs].
+みすちゃんのロールプレイをしてセリフを考えてくれる方、プログラムと同じようにPull Requestを送って下さい。
 
-You'll need to edit the `Procfile` to set the name of your hubot.
 
-More detailed documentation can be found on the
-[deploying hubot onto Heroku][deploy-heroku] wiki page.
+### 使い方がよく分からない
 
-### Deploying to UNIX or Windows
+上記の開発用チャンネルにお越しください。使い方を教えます。
+研究会、班、関係なくどなたでもお越しください。
 
-If you would like to deploy to either a UNIX operating system or Windows.
-Please check out the [deploying hubot onto UNIX][deploy-unix] and
-[deploying hubot onto Windows][deploy-windows] wiki pages.
 
-[heroku-node-docs]: http://devcenter.heroku.com/articles/node-js
-[deploy-heroku]: https://github.com/github/hubot/blob/master/docs/deploying/heroku.md
-[deploy-unix]: https://github.com/github/hubot/blob/master/docs/deploying/unix.md
-[deploy-windows]: https://github.com/github/hubot/blob/master/docs/deploying/unix.md
 
-## Campfire Variables
+## ライセンス
 
-If you are using the Campfire adapter you will need to set some environment
-variables. Refer to the documentation for other adapters and the configuraiton
-of those, links to the adapters can be found on [Hubot Adapters][hubot-adapters].
+このソースコードはMIS.Wの名義で発表する作品においてのみ、
+コードの改変、および組み込み、再配布が可能です。
+配布の際に著作者の表記の義務は発生しません。
 
-Create a separate Campfire user for your bot and get their token from the web
-UI.
+このソースコードを使用したプログラムを制作した場合、
+MIS.W会員へのソースコードの公開を義務とします。
 
-    % heroku config:set HUBOT_CAMPFIRE_TOKEN="..."
 
-Get the numeric IDs of the rooms you want the bot to join, comma delimited. If
-you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42` 
-and `https://mysubdomain.campfirenow.com/room/1024` then you'd add it like this:
 
-    % heroku config:set HUBOT_CAMPFIRE_ROOMS="42,1024"
+## 開発者
 
-Add the subdomain hubot should connect to. If you web URL looks like
-`http://mysubdomain.campfirenow.com` then you'd add it like this:
+各自追加して下さい
 
-    % heroku config:set HUBOT_CAMPFIRE_ACCOUNT="mysubdomain"
+### プログラム
 
-[hubot-adapters]: https://github.com/github/hubot/blob/master/docs/adapters.md
+yuki (47代)
+masami (47代)
 
-## Restart the bot
-
-You may want to get comfortable with `heroku logs` and `heroku restart`
-if you're having issues.
+### セリフ
