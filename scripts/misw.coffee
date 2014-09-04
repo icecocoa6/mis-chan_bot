@@ -3,7 +3,8 @@
 
 module.exports = (robot) ->
   robot.hear /ぬるぽ/, (msg) ->
-    msg.send '''
+    user_name = msg.message.user.name
+    msg.send """ 
  
    Λ＿Λ    ＼＼
   （ ・∀・）   | | ｶﾞｯ
@@ -11,10 +12,10 @@ module.exports = (robot) ->
    Ｙ /ノ     人
     / ）     <  >  _Λ∩
  ＿/し' ／／  Ｖ｀Д´）/
- （＿フ彡            / ←>>1
-'''
+ （＿フ彡            / ←  #{user_name}
+"""
 
-  robot.hear /^joined \#/, (msg) ->
+  robot.hear /^joined \#/i, (msg) ->
     user_name = msg.message.user.name
     msg.send "@#{user_name}: Yo."
 
@@ -25,3 +26,9 @@ module.exports = (robot) ->
   robot.hear /ラーメン/, (msg) ->
     user_name = msg.message.user.name
     msg.send "@#{user_name}: 高木やですね？ ご一緒します！"
+
+  robot.hear /(頑張る|頑張り|がんばる|がんばり|伊東ライフ)/, (msg) ->
+    msg.send "がんばれ♡がんばれ♡"
+
+  robot.hear /乙/, (msg) ->
+    msg.send "(・ω・｀)乙 これは乙じゃなくてポニーテールなんだからね！"
