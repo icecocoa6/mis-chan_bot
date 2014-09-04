@@ -32,3 +32,6 @@ module.exports = (robot) ->
 
   robot.hear /乙/, (msg) ->
     msg.send "(・ω・｀)乙 これは乙じゃなくてポニーテールなんだからね！"
+
+  robot.hear /(なんでもします|何でもします)/, (msg) ->
+    msg.send "ん？"
