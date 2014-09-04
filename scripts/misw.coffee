@@ -21,3 +21,7 @@ module.exports = (robot) ->
   robot.hear /(寝る|寝ま)/, (msg) ->
     user_name = msg.message.user.name
     msg.send "@#{user_name}: Good night."
+
+  robot.hear /ラーメン/, (msg) ->
+    user_name = msg.message.user.name
+    msg.send "@#{user_name}: 高木やですね？ ご一緒します！"
