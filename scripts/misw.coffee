@@ -14,11 +14,6 @@ module.exports = (robot) ->
  ＿/し' ／／  Ｖ｀Д´）/
  （＿フ彡            / ←  #{user_name}
 """
-
-  robot.enter (msg) ->
-    user_name = msg.message.user.name
-    msg.send "@#{user_name}: Yo."
-
   robot.hear /(寝る|寝ま)/, (msg) ->
     user_name = msg.message.user.name
     msg.send "@#{user_name}: Good night."
