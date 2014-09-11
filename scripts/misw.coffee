@@ -35,3 +35,7 @@ module.exports = (robot) ->
 
   robot.hear /(なんでもします|何でもします)/, (msg) ->
     msg.send "ん？"
+
+  robot.hear /高木屋/, (msg) ->
+    user_name = msg.message.user.name
+    msg.send "@#{user_name}: 高木\"や\""
