@@ -34,3 +34,9 @@ module.exports = (robot) ->
   robot.hear /高木屋/, (msg) ->
     user_name = msg.message.user.name
     msg.send "@#{user_name}: 高木\"や\""
+
+  robot.respond /tutorial/i, (msg) ->
+    msg.send "Getting Started with Slack (Slackをはじめよう)"
+    msg.send "http://misw.jp/wiki/index.cgi?page=Slack%A4%F2%A4%CF%A4%B8%A4%E1%A4%E8%A4%A6"
+    msg.send "Managing Channels and Private Groups (チャンネルとプライベートグループの管理)"
+    msg.send "http://misw.jp/wiki/index.cgi?page=%A5%C1%A5%E3%A5%F3%A5%CD%A5%EB%A4%C8%A5%D7%A5%E9%A5%A4%A5%D9%A1%BC%A5%C8%A5%B0%A5%EB%A1%BC%A5%D7%A4%CE%B4%C9%CD%FD"
