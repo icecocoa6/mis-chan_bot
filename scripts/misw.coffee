@@ -35,6 +35,14 @@ module.exports = (robot) ->
     user_name = msg.message.user.name
     msg.send "@#{user_name}: 高木\"や\""
 
+  robot.respond /おみくじ(\s+(\S+))?\s*$/i, (msg) ->
+    # 参考:https://github.com/bouzuya/hubot-omikuji
+    user_name = msg.message.user.name
+    data = JSON.parse(process.env.HUBOT_OMIKUJI_INITIAL_DATA ? '{}')
+    data.default = data.default ? ["大吉", "中吉", "小吉", "吉", "末吉", "凶", "大凶"]
+    type = res.match[2] ? 'default'
+    res.send "@#{user_name}: あなたの運勢は..."+res.random(data[type])+"です！"
+
   robot.respond /tutorial/i, (msg) ->
     msg.send """
 
